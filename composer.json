@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "symfony/framework-bundle": ">=2.1,<2.4-dev"
+        "sensio/generator-bundle": ">=2.2,<3.0"
     },
     "autoload": {
         "psr-0": { "Gnugat\\CommandBundle": "" }
