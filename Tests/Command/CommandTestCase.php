@@ -1,11 +1,11 @@
 <?php
 
-namespace Gnugat\GnugatCommandBundle\Tests\Command;
+namespace Gnugat\CommandBundle\Tests\Command;
 
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 
-use Gnugat\GnugatCommandBundle\Command\InstallCommandBundle;
+use Gnugat\CommandBundle\Command\InstallCommandBundle;
 
 class CommandTestCase extends \PHPUnit_Framework_TestCase
 {

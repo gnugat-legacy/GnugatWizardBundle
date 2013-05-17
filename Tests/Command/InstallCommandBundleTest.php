@@ -1,8 +1,8 @@
 <?php
 
-namespace Gnugat\GnugatCommandBundle\Tests\Command;
+namespace Gnugat\CommandBundle\Tests\Command;
 
-use  Gnugat\GnugatCommandBundle\Tests\Command\CommandTestCase;
+use  Gnugat\CommandBundle\Tests\Command\CommandTestCase;
 
 class InstallBundleCommandTest extends CommandTestCase
 {
