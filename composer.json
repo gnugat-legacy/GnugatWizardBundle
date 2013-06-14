@@ -2,12 +2,12 @@
     "name": "gnugat/command-bundle",
     "type": "symfony-bundle",
     "description": "Installation and removal of existing Symfony2 bundles.",
-    "keywords": ["symfony", "install", "removal", "bundle", "command"],
+    "keywords": ["symfony", "install", "remove", "bundle", "command"],
     "homepage": "https://github.com/gnugat/GnugatCommandBundle",
     "license": "MIT",
     "authors": [
         {
-            "name": "Loic Chardonnet"
+            "name": "Loïc Chardonnet"
         }
     ],
     "require": {
