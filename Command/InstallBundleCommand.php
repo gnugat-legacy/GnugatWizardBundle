@@ -5,8 +5,9 @@ namespace SfFactory\BundleCommandBundle\Command;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
+
+use Sensio\Bundle\GeneratorBundle\Manipulator\KernelManipulator;
 
 /**
  * Installation of a bundle.
@@ -32,6 +33,35 @@ EOT
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $input->getArgument('composer-package-name');
+        $errorMessage = '';
+
+        $composerPackageName = $input->getArgument('composer-package-name');
+
+        // sensio/generator-bundle
+        // Sensio\GeneratorBundle\SensioGeneratorBundle
+
+
+        $this->getContainer()
+            ->get('sf_factory_bundle_command_bundle.executor')
+            ->execute('composer require '.$composerPackageName);
+
+        try {
+            $hasBeenAdded = $this->getContainer()
+                ->get('sf_factory_bundle_command_bundle.kernel_manipulator')
+                ->addBundle($namespace.'\\'.$bundle);
+
+            if (!$hasBeenAdded) {
+                $errorMessage = 'Error: AppKernel or $bundles array not found';
+            }
+        } catch (\RuntimeException $e) {
+            $errorMessage = 'Error: bundle already defined in AppKernel';
+        }
+
+        if (!empty($errorMessage)) {
+            return array(
+                $errorMessage,
+                '',
+            );
+        }
     }
 }

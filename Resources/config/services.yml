@@ -1,0 +1,10 @@
+parameters:
+    sf_factory_bundle_command_bundle.executor.class: SfFactory\BundleCommandBundle\Composer\Executor
+    sf_factory_bundle_command_bundle.kernel_manipulator.class: Sensio\GeneratorBundle\Manipulator\KernelManipulator
+
+services:
+    sf_factory_bundle_command_bundle.executor:
+        class: %sf_factory_bundle_command_bundle.executor.class%
+    sf_factory_bundle_command_bundle.kernel_manipulator:
+        class: %sf_factory_bundle_command_bundle.kernel_manipulator.class%
+        arguments: ["@kernel"]
