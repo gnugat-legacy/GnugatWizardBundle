@@ -17,7 +17,7 @@
         "phpunit/phpunit": "3.7.*"
     },
     "autoload": {
-        "psr-0": { "Gnugat\\CommandBundle": "" }
+        "psr-0": { "SfFactory\\BundleCommandBundle": "" }
     },
-    "target-dir": "Gnugat/CommandBundle"
+    "target-dir": "SfFactory/BundleCommandBundle"
 }

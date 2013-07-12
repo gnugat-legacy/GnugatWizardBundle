@@ -1,8 +1,6 @@
 <?php
 
-namespace Gnugat\CommandBundle\Tests\Command;
-
-use Gnugat\CommandBundle\Tests\Command\CommandTestCase;
+namespace SfFactory\BundleCommandBundle\Tests\Command;
 
 class InstallBundleCommandTest extends CommandTestCase
 {

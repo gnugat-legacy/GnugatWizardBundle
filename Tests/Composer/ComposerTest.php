@@ -1,9 +1,9 @@
 <?php
 
-namespace Gnugat\CommandBundle\Tests\Composer;
+namespace SfFactory\BundleCommandBundle\Tests\Composer;
 
-use Gnugat\CommandBundle\Composer\Composer;
-use Gnugat\CommandBundle\Composer\Executor;
+use SfFactory\BundleCommandBundle\Composer\Composer;
+use SfFactory\BundleCommandBundle\Composer\Executor;
 
 class ComposerTest extends \PHPUnit_Framework_TestCase
 {
@@ -11,7 +11,7 @@ class ComposerTest extends \PHPUnit_Framework_TestCase
     {
         $packageName = 'author/package';
 
-        $executor = $this->getMock('Gnugat\\CommandBundle\\Composer\\Executor');
+        $executor = $this->getMock('SfFactory\\BundleCommandBundle\\Composer\\Executor');
         $executor->expects($this->once())
             ->method('execute')
             ->with($this->equalTo('composer.phar require '.$packageName));

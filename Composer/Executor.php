@@ -1,6 +1,6 @@
 <?php
 
-namespace Gnugat\CommandBundle\Composer;
+namespace SfFactory\BundleCommandBundle\Composer;
 
 /**
  * Executes an external program.

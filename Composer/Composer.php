@@ -1,6 +1,6 @@
 <?php
 
-namespace Gnugat\CommandBundle\Composer;
+namespace SfFactory\BundleCommandBundle\Composer;
 
 /**
  * Manages PHP dependencies.
@@ -10,7 +10,7 @@ namespace Gnugat\CommandBundle\Composer;
 class Composer
 {
     /**
-     * @param \Gnugat\CommandBundle\Composer\Executor $executor The executor.
+     * @param Executor $executor The executor.
      */
     public function __construct(Executor $executor)
     {

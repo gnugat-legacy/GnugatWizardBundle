@@ -1,8 +1,8 @@
 <?php
 
-namespace Gnugat\CommandBundle\Tests\Composer;
+namespace SfFactory\BundleCommandBundle\Tests\Composer;
 
-use Gnugat\CommandBundle\Composer\Executor;
+use SfFactory\BundleCommandBundle\Composer\Executor;
 
 class ExecutorTest extends \PHPUnit_Framework_TestCase
 {
