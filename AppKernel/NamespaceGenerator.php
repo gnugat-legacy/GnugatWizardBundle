@@ -14,6 +14,10 @@ class NamespaceGenerator
         $vendorParts = array_map('ucfirst', explode('-', $vendor));
         $vendorName = implode('', $vendorParts);
 
-        return $vendorName.'\\'.$bundleName.'\\'.$vendorName.$bundleName;
+        return implode(NAMESPACE_SEPARATOR, array(
+            $vendorName,
+            $bundleName,
+            $vendorName.$bundleName,
+        ));
     }
 }
