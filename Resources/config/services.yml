@@ -1,6 +1,6 @@
 parameters:
     sf_factory_bundle_command.executor.class: SfFactory\BundleCommandBundle\Composer\Executor
-    sf_factory_bundle_command.kernel_manipulator.class: Sensio\GeneratorBundle\Manipulator\KernelManipulator
+    sf_factory_bundle_command.kernel_manipulator.class: Sensio\Bundle\GeneratorBundle\Manipulator\KernelManipulator
     sf_factory_bundle_command.namespace_generator.class: SfFactory\BundleCommandBundle\AppKernel\NamespaceGenerator
 
 services:
