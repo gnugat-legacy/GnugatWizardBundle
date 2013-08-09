@@ -34,19 +34,19 @@ class CommandTestCase extends \PHPUnit_Framework_TestCase
         $container = new ContainerBuilder();
 
         $container->register(
-            'sf_factory_bundle_command_bundle.executor',
+            'sf_factory_bundle_command.executor',
             'SfFactory\\BundleCommandBundle\\Tests\\Mocks\\Composer\\Executor'
         );
 
         $container->register(
-            'sf_factory_bundle_command_bundle.kernel_manipulator',
+            'sf_factory_bundle_command.kernel_manipulator',
             'SfFactory\\BundleCommandBundle\\Tests\\Mocks\\Manipulator\\KernelManipulator'
         )
             ->addArgument($kernel)
         ;
 
         $container->register(
-            'sf_factory_bundle_command_bundle.namespace_generator',
+            'sf_factory_bundle_command.namespace_generator',
             'SfFactory\\BundleCommandBundle\\AppKernel\\NamespaceGenerator'
         );
 

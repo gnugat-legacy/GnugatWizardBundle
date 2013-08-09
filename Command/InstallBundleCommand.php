@@ -38,17 +38,17 @@ EOT
         $composerPackageName = $input->getArgument('composer-package-name');
 
         $namespacedBundleClassname = $this->getContainer()
-            ->get('sf_factory_bundle_command_bundle.namespace_generator')
+            ->get('sf_factory_bundle_command.namespace_generator')
             ->makeFromComposerPackageName('composer require '.$composerPackageName);
 
 
         $this->getContainer()
-            ->get('sf_factory_bundle_command_bundle.executor')
+            ->get('sf_factory_bundle_command.executor')
             ->execute('composer require '.$composerPackageName);
 
         try {
             $hasBeenAdded = $this->getContainer()
-                ->get('sf_factory_bundle_command_bundle.kernel_manipulator')
+                ->get('sf_factory_bundle_command.kernel_manipulator')
                 ->addBundle($namespacedBundleClassname);
 
             if (!$hasBeenAdded) {
