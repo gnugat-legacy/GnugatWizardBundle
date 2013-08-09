@@ -1,0 +1,23 @@
+{
+    "name": "sf-factory/bundle-command-bundle",
+    "type": "symfony-bundle",
+    "description": "Installation and removal of existing Symfony2 bundles",
+    "keywords": ["symfony", "install", "remove", "bundle", "command"],
+    "homepage": "https://github.com/sf-factory/SfFactoryBundleCommandBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Loïc Chardonnet"
+        }
+    ],
+    "require": {
+        "sensio/generator-bundle": ">=2.2,<3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
+    "autoload": {
+        "psr-0": { "SfFactory\\BundleCommandBundle": "" }
+    },
+    "target-dir": "SfFactory/BundleCommandBundle"
+}

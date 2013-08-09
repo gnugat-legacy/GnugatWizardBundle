@@ -2,7 +2,12 @@
 
 ## Installation
 
+    composer.phar require --dev sf-factory/bundle-command-bundle
+
 ## Usage
+
+    app/console bundle:install acme/demo-bundle '1.0.*'
+    # Planned: app/console bundle:remove acme/demo-bundle
 
 ## Further documentation
 
