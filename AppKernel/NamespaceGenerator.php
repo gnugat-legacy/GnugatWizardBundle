@@ -4,7 +4,7 @@ namespace SfFactory\BundleCommandBundle\AppKernel;
 
 class NamespaceGenerator
 {
-    public static function makeFromComposerPackageName($composerPackageName)
+    public function makeFromComposerPackageName($composerPackageName)
     {
         list($vendor, $bundle) = explode('/', $composerPackageName);
 

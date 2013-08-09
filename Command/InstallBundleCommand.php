@@ -37,8 +37,9 @@ EOT
 
         $composerPackageName = $input->getArgument('composer-package-name');
 
-        // sensio/generator-bundle
-        // Sensio\GeneratorBundle\SensioGeneratorBundle
+        $namespacedBundleClassname = $this->getContainer()
+            ->get('sf_factory_bundle_command_bundle.namespace_generator')
+            ->makeFromComposerPackageName('composer require '.$composerPackageName);
 
 
         $this->getContainer()
@@ -48,7 +49,7 @@ EOT
         try {
             $hasBeenAdded = $this->getContainer()
                 ->get('sf_factory_bundle_command_bundle.kernel_manipulator')
-                ->addBundle($namespace.'\\'.$bundle);
+                ->addBundle($namespacedBundleClassname);
 
             if (!$hasBeenAdded) {
                 $errorMessage = 'Error: AppKernel or $bundles array not found';

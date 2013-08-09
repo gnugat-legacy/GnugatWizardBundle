@@ -1,10 +1,17 @@
 parameters:
     sf_factory_bundle_command_bundle.executor.class: SfFactory\BundleCommandBundle\Composer\Executor
     sf_factory_bundle_command_bundle.kernel_manipulator.class: Sensio\GeneratorBundle\Manipulator\KernelManipulator
+    sf_factory_bundle_command_bundle.namespace_generator.class: SfFactory\BundleCommandBundle\AppKernel\NamespaceGenerator
 
 services:
     sf_factory_bundle_command_bundle.executor:
         class: %sf_factory_bundle_command_bundle.executor.class%
+
     sf_factory_bundle_command_bundle.kernel_manipulator:
         class: %sf_factory_bundle_command_bundle.kernel_manipulator.class%
         arguments: ["@kernel"]
+
+    sf_factory_bundle_command_bundle.namespace_generator:
+        class: %sf_factory_bundle_command_bundle.namespace_generator.class%
+
+
