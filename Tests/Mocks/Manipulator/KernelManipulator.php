@@ -9,20 +9,12 @@ class KernelManipulator extends Manipulator
 {
     protected $kernel;
 
-    /**
-     * @param KernelInterface $kernel A KernelInterface instance
-     */
     public function __construct(KernelInterface $kernel)
     {
         $this->kernel = $kernel;
         $this->reflected = new \ReflectionObject($kernel);
     }
 
-    /**
-     * @param string $bundle The bundle class name
-     *
-     * @return Boolean true if it worked, false otherwise
-     */
     public function addBundle($bundle)
     {
         return true;

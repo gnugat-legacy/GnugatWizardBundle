@@ -10,12 +10,20 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Sensio\Bundle\GeneratorBundle\Manipulator\KernelManipulator;
 
 /**
- * Installation of a bundle.
+ * This command executes the following steps:
+ *
+ * 1. download the bundle
+ * 2. add the bundle to app/AppKernel.php
+ *
+ * @todo : 3. add the bundle default's configuration to app/config/config.yml
  *
  * @author Loic Chardonnet <loic.chardonnet@gmail.com>
  */
 class InstallBundleCommand extends ContainerAwareCommand
 {
+    /**
+     * @{@inheritdoc}
+     */
     protected function configure()
     {
         $this
@@ -32,6 +40,9 @@ EOT
         );
     }
 
+    /**
+     * @{@inheritdoc}
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $errorMessage = '';

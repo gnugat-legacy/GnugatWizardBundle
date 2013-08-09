@@ -2,8 +2,18 @@
 
 namespace SfFactory\BundleCommandBundle\AppKernel;
 
+/**
+ * @author Loic Chardonnet <loic.chardonnet@gmail.com>
+ */
 class NamespaceGenerator
 {
+    /**
+     * Generates a namespace from a composer package name.
+     *
+     * @param string $composerPackageName
+     *
+     * @return string
+     */
     public function makeFromComposerPackageName($composerPackageName)
     {
         list($vendor, $bundle) = explode('/', $composerPackageName);
