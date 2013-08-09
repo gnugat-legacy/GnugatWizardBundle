@@ -2,7 +2,7 @@
 
 ## Installation
 
-    composer.phar require --dev sf-factory/command-bundle
+    composer.phar require --dev sf-factory/bundle-command-bundle
 
 ## Usage
 

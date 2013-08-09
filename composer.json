@@ -1,9 +1,9 @@
 {
-    "name": "gnugat/command-bundle",
+    "name": "sf-factory/bundle-command-bundle",
     "type": "symfony-bundle",
-    "description": "Installation and removal of existing Symfony2 bundles.",
+    "description": "Installation and removal of existing Symfony2 bundles",
     "keywords": ["symfony", "install", "remove", "bundle", "command"],
-    "homepage": "https://github.com/gnugat/GnugatCommandBundle",
+    "homepage": "https://github.com/sf-factory/SfFactoryBundleCommandBundle",
     "license": "MIT",
     "authors": [
         {
