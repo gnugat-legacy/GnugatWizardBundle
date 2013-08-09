@@ -6,8 +6,8 @@
 
 ## Usage
 
-    app/console bundle:install acme/acme-demo-bundle
-    app/console bundle:remove acme/acme-demo-bundle
+    app/console bundle:install acme/demo-bundle '1.0.*'
+    # Planned: app/console bundle:remove acme/demo-bundle
 
 ## Further documentation
 

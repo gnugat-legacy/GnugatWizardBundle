@@ -19,7 +19,7 @@ class InstallBundleCommand extends ContainerAwareCommand
     protected function configure()
     {
         $this
-            ->setName('bundle:install')
+            ->setName('sf-factory:bundle:install')
             ->addArgument('composer-package-name', InputArgument::REQUIRED, 'The Composer package name')
             ->addArgument('version', InputArgument::REQUIRED, 'The version')
             ->setHelp(<<<EOT
