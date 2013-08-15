@@ -59,6 +59,6 @@ class CommandTestCase extends \PHPUnit_Framework_TestCase
         $command->setContainer($container);
         $application->add($command);
 
-        $this->command = $application->find('bundle:install');
+        $this->command = $application->find('sf-factory:bundle:install');
     }
 }
