@@ -2,6 +2,13 @@
 
 This file logs the changes between versions.
 
+## 0.1.2: Fixed quality
+
+* fixed dead code
+* fixed permissions
+* fixed test/code coverage
+* fixed synopsis coupling with command definition
+
 ## 0.1.1: Fixed tests
 
 * fixed CommandTestCase by making it abstract
