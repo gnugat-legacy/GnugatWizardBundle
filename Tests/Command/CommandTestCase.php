@@ -8,7 +8,9 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 use SfFactory\BundleCommandBundle\Command\InstallBundleCommand;
 
-class CommandTestCase extends \PHPUnit_Framework_TestCase
+use PHPUnit_Framework_TestCase;
+
+abstract class CommandTestCase extends PHPUnit_Framework_TestCase
 {
     protected $command;
     protected $commandTester;
@@ -59,6 +61,6 @@ class CommandTestCase extends \PHPUnit_Framework_TestCase
         $command->setContainer($container);
         $application->add($command);
 
-        $this->command = $application->find('bundle:install');
+        $this->command = $application->find('sf-factory:bundle:install');
     }
 }
