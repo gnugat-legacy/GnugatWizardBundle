@@ -1,0 +1,4 @@
+The <info>sf-factory-bundle:install</info> command helps you to install existing bundles by:
+
+1. using the `composer.phar require <composer-package-name> <version>`
+2. adding it to the `app/AppKernel.php` file

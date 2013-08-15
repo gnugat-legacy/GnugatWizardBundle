@@ -28,14 +28,7 @@ class InstallBundleCommand extends ContainerAwareCommand
             ->setName('sf-factory:bundle:install')
             ->addArgument('composer-package-name', InputArgument::REQUIRED, 'The Composer package name')
             ->addArgument('version', InputArgument::REQUIRED, 'The version')
-            ->setHelp(<<<EOT
-The <info>bundle:install</info> command helps you to install existing bundles
-by:
-1. using the `composer.phar require <composer-package-name> <version>`;
-2. adding it to the `app/AppKernel.php` file;
-3. setting its default configuration.
-EOT
-        );
+            ->setHelp(file_get_contents(__DIR__.'/../Resources/synopsis.txt'));
     }
 
     /**
