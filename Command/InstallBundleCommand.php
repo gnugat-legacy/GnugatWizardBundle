@@ -13,8 +13,6 @@ use Symfony\Component\Console\Output\OutputInterface;
  * 1. download the bundle
  * 2. add the bundle to app/AppKernel.php
  *
- * @todo : 3. add the bundle default's configuration to app/config/config.yml
- *
  * @author Loic Chardonnet <loic.chardonnet@gmail.com>
  */
 class InstallBundleCommand extends ContainerAwareCommand
