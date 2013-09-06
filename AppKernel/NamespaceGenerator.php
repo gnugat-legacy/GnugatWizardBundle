@@ -2,7 +2,6 @@
 
 namespace SfFactory\BundleCommandBundle\AppKernel;
 
-use Symfony\Component\HttpKernel\Kernel;
 /**
  * @author Loic Chardonnet <loic.chardonnet@gmail.com>
  */
@@ -49,14 +48,12 @@ class NamespaceGenerator
 
             $explodedNamespace = explode('\\', $namespace);
             $namespaceAuthorName = array_shift($explodedNamespace);
-
+            array_pop($explodedNamespace);
             $bundleName = array_pop($explodedNamespace);
-            $bundleName = array_pop($explodedNamespace);
-
 
             $authorNamespaceName =  $namespaceAuthorName . $bundleName;
 
-            if('Symfony' == $namespaceAuthorName){
+            if ('Symfony' == $namespaceAuthorName) {
                 $authorNamespaceName = $bundleName;
             }
             $arrayNamespaces[$composerPackageName] = $namespace . $authorNamespaceName;

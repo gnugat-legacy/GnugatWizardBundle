@@ -42,7 +42,6 @@ class InstallBundleCommand extends ContainerAwareCommand
             ->get('sf_factory_bundle_command.namespace_generator')
             ->makeFromComposerPackageName($composerPackageName);
 
-
         $this->getContainer()
             ->get('sf_factory_bundle_command.executor')
             ->execute(sprintf(
