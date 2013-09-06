@@ -38,10 +38,6 @@ class InstallBundleCommand extends ContainerAwareCommand
 
         $composerPackageName = $input->getArgument('composer-package-name');
 
-        $namespacedBundleClassname = $this->getContainer()
-            ->get('sf_factory_bundle_command.namespace_generator')
-            ->makeFromComposerPackageName($composerPackageName);
-
         $this->getContainer()
             ->get('sf_factory_bundle_command.executor')
             ->execute(sprintf(
@@ -49,6 +45,10 @@ class InstallBundleCommand extends ContainerAwareCommand
                 $composerPackageName,
                 $input->getArgument('version')
             ));
+
+        $namespacedBundleClassname = $this->getContainer()
+            ->get('sf_factory_bundle_command.namespace_generator')
+            ->makeFromComposerPackageName($composerPackageName);
 
         try {
             $hasBeenAdded = $this->getContainer()
