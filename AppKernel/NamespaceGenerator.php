@@ -39,14 +39,27 @@ class NamespaceGenerator
     private function getNamespacesWithPackageNames($arrayMaps)
     {
         $arrayNamespaces = array();
-        foreach($arrayMaps as $namespace => $path){
-            // package name is after the last '/' of path,  author name is before the last '/' of path
-            $packageName = substr($path[0], strrpos($path[0], '/') +1);
-            $pathWithoutPackageName = substr($path[0], 0, strrpos($path[0], '/'));
-            $authorName = substr($pathWithoutPackageName, strrpos($pathWithoutPackageName, '/') +1);
-            $composerPackageName = $authorName . '/' .$packageName;
+        foreach ($arrayMaps as $namespace => $paths) {
+            $path = array_pop($paths);
 
-            $arrayNamespaces[$composerPackageName] = $namespace;
+            $explodedPath = explode('/', $path);
+            $packageName = array_pop($explodedPath);
+            $composerAuthorName = array_pop($explodedPath);
+            $composerPackageName = $composerAuthorName.'/'.$packageName;
+
+            $explodedNamespace = explode('\\', $namespace);
+            $namespaceAuthorName = array_shift($explodedNamespace);
+
+            $bundleName = array_pop($explodedNamespace);
+            $bundleName = array_pop($explodedNamespace);
+
+
+            $authorNamespaceName =  $namespaceAuthorName . $bundleName;
+
+            if('Symfony' == $namespaceAuthorName){
+                $authorNamespaceName = $bundleName;
+            }
+            $arrayNamespaces[$composerPackageName] = $namespace . $authorNamespaceName;
         }
 
         return $arrayNamespaces;

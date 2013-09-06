@@ -24,4 +24,14 @@ class NamespaceGeneratorTest extends \PHPUnit_Framework_TestCase
             );
         }
     }
+
+    public function testSymfonyCase()
+    {
+        $namespaceGenerator = new NamespaceGenerator("/var/www/dev/SfFactoryBundleCommandBundle/Tests/AppKernel/Fixtures/autoload_namespaces.php");
+
+        $this->assertSame(
+            'Symfony\\Bundle\\FrameworkBundle\\FrameworkBundle',
+            $namespaceGenerator->makeFromComposerPackageName('symfony/framework-bundle')
+        );
+    }
 }
