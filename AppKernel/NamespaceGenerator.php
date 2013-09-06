@@ -2,6 +2,8 @@
 
 namespace SfFactory\BundleCommandBundle\AppKernel;
 
+use Symfony\Component\HttpKernel\KernelInterface;
+
 /**
  * @author Loic Chardonnet <loic.chardonnet@gmail.com>
  */
@@ -9,9 +11,9 @@ class NamespaceGenerator
 {
     public $namespacesPath;
 
-    public function __construct($namespacesPath)
+    public function __construct(KernelInterface $kernel)
     {
-        $this->namespacesPath = $namespacesPath;
+        $this->namespacesPath = $kernel->getRootDir().'/../vendor/composer/autoload_namespaces.php';
     }
     /**
      * Generates a namespace from a composer package name.

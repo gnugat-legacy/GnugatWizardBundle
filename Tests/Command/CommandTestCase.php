@@ -8,6 +8,8 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 use SfFactory\BundleCommandBundle\Command\InstallBundleCommand;
 
+use SfFactory\BundleCommandBundle\Tests\Mocks\AppKernel\Kernel;
+
 use PHPUnit_Framework_TestCase;
 
 abstract class CommandTestCase extends PHPUnit_Framework_TestCase
@@ -51,7 +53,7 @@ abstract class CommandTestCase extends PHPUnit_Framework_TestCase
             'sf_factory_bundle_command.namespace_generator',
             'SfFactory\\BundleCommandBundle\\AppKernel\\NamespaceGenerator'
         )
-            ->addArgument(__DIR__.'/../AppKernel/Fixtures/autoload_namespaces.php')
+            ->addArgument(new Kernel())
         ;
 
         return $container;

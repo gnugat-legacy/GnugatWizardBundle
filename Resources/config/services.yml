@@ -2,7 +2,6 @@ parameters:
     sf_factory_bundle_command.executor.class: SfFactory\BundleCommandBundle\Composer\Executor
     sf_factory_bundle_command.kernel_manipulator.class: Sensio\Bundle\GeneratorBundle\Manipulator\KernelManipulator
     sf_factory_bundle_command.namespace_generator.class: SfFactory\BundleCommandBundle\AppKernel\NamespaceGenerator
-    sf_factory_bundle_command.namespace_generator.namespaces_collection: /var/www/dev/SfFactoryBundleCommandBundle/Tests/AppKernel/Fixtures/autoload_namespaces.php
 
 services:
     sf_factory_bundle_command.executor:
@@ -14,4 +13,4 @@ services:
 
     sf_factory_bundle_command.namespace_generator:
         class: %sf_factory_bundle_command.namespace_generator.class%
-        arguments: [%sf_factory_bundle_command.namespace_generator.namespaces_collection%]
+        arguments: ["@kernel"]

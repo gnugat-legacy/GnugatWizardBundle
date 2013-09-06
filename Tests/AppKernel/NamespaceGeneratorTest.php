@@ -4,6 +4,8 @@ namespace SfFactory\BundleCommandBundle\Tests\AppKernel;
 
 use SfFactory\BundleCommandBundle\AppKernel\NamespaceGenerator;
 
+use SfFactory\BundleCommandBundle\Tests\Mocks\AppKernel\Kernel;
+
 class NamespaceGeneratorTest extends \PHPUnit_Framework_TestCase
 {
     public function testMakeFromComposerPackageName()
@@ -16,7 +18,7 @@ class NamespaceGeneratorTest extends \PHPUnit_Framework_TestCase
             'knplabs/knp-menu-bundle' => 'Knp\Bundle\MenuBundle\KnpMenuBundle',
         );
 
-        $namespaceGenerator = new NamespaceGenerator(__DIR__."/Fixtures/autoload_namespaces.php");
+        $namespaceGenerator = new NamespaceGenerator(new Kernel());
         foreach ($PackagesAndNamespaces as $composerPackageName => $namespace) {
             $this->assertSame(
                 $namespace,
@@ -27,7 +29,7 @@ class NamespaceGeneratorTest extends \PHPUnit_Framework_TestCase
 
     public function testSymfonyCase()
     {
-        $namespaceGenerator = new NamespaceGenerator(__DIR__."/Fixtures/autoload_namespaces.php");
+        $namespaceGenerator = new NamespaceGenerator(new Kernel());
 
         $this->assertSame(
             'Symfony\\Bundle\\FrameworkBundle\\FrameworkBundle',
