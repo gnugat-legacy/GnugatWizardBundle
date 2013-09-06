@@ -11,7 +11,6 @@ class ExecutorTest extends \PHPUnit_Framework_TestCase
         $message = 'Hello world!';
 
         $executor = new Executor();
-
-        $this->assertSame($message, $executor->execute("echo '$message'"));
+        $this->assertSame($message."\n", $executor->execute("echo '$message'"));
     }
 }

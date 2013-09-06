@@ -1,6 +1,7 @@
 # Dependencies
 /vendor/*
 /composer.lock
+/composer.phar
 
 # Testing
 phpunit.xml
