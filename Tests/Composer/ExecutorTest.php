@@ -13,4 +13,13 @@ class ExecutorTest extends \PHPUnit_Framework_TestCase
         $executor = new Executor();
         $this->assertSame($message."\n", $executor->execute("echo '$message'"));
     }
+
+    /**
+     * @expectedException RuntimeException
+     */
+    public function testExecutionFail()
+    {
+        $executor = new Executor();
+        $executor->execute("unkown-command-name");
+    }
 }
