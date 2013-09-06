@@ -11,7 +11,8 @@
         }
     ],
     "require": {
-        "sensio/generator-bundle": ">=2.2,<3.0"
+        "sensio/generator-bundle": ">=2.2,<3.0",
+        "symfony/process": "~2.2"
     },
     "require-dev": {
         "phpunit/phpunit": "3.7.*"

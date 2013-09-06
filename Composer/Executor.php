@@ -2,6 +2,8 @@
 
 namespace SfFactory\BundleCommandBundle\Composer;
 
+use Symfony\Component\Process\Process;
+
 /**
  * Executes an external program.
  *
@@ -18,6 +20,13 @@ class Executor
      */
     public function execute($command)
     {
-        return exec($command);
+        $process = new Process($command);
+        $process->run();
+
+        if (!$process->isSuccessful()) {
+            throw new \RuntimeException($process->getErrorOutput());
+        }
+
+        return $process->getOutput();
     }
 }
