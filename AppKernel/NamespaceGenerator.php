@@ -23,7 +23,7 @@ class NamespaceGenerator
     public function makeFromComposerPackageName($composerPackageName)
     {
         $arrayMaps = include($this->namespacesPath);
-        $namespacesWithPackageNames = $this->getNamespacesWithPackageNames($arrayMaps);
+        $namespacesWithPackageNames = $this->getNamespacesWithPackageNames($arrayMaps, $composerPackageName);
 
         return $namespacesWithPackageNames[$composerPackageName];
     }
@@ -35,7 +35,7 @@ class NamespaceGenerator
      *
      * @return Array $arrayNamespaces
      */
-    private function getNamespacesWithPackageNames($arrayMaps)
+    private function getNamespacesWithPackageNames($arrayMaps, $packageNameNeeded)
     {
         $arrayNamespaces = array();
         foreach ($arrayMaps as $namespace => $paths) {
@@ -57,6 +57,10 @@ class NamespaceGenerator
                 $authorNamespaceName = $bundleName;
             }
             $arrayNamespaces[$composerPackageName] = $namespace . $authorNamespaceName;
+
+            if ($packageNameNeeded == $composerPackageName) {
+                break 1;
+            }
         }
 
         return $arrayNamespaces;
