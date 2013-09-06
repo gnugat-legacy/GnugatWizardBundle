@@ -51,7 +51,7 @@ abstract class CommandTestCase extends PHPUnit_Framework_TestCase
             'sf_factory_bundle_command.namespace_generator',
             'SfFactory\\BundleCommandBundle\\AppKernel\\NamespaceGenerator'
         )
-            ->addArgument('/var/www/dev/SfFactoryBundleCommandBundle/Tests/AppKernel/Fixtures/autoload_namespaces.php')
+            ->addArgument(__DIR__.'/../AppKernel/Fixtures/autoload_namespaces.php')
         ;
 
         return $container;

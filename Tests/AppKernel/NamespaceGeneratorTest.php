@@ -16,7 +16,7 @@ class NamespaceGeneratorTest extends \PHPUnit_Framework_TestCase
             'knplabs/knp-menu-bundle' => 'Knp\Bundle\MenuBundle\KnpMenuBundle',
         );
 
-        $namespaceGenerator = new NamespaceGenerator("/var/www/dev/SfFactoryBundleCommandBundle/Tests/AppKernel/Fixtures/autoload_namespaces.php");
+        $namespaceGenerator = new NamespaceGenerator(__DIR__."/Fixtures/autoload_namespaces.php");
         foreach ($PackagesAndNamespaces as $composerPackageName => $namespace) {
             $this->assertSame(
                 $namespace,
@@ -27,7 +27,7 @@ class NamespaceGeneratorTest extends \PHPUnit_Framework_TestCase
 
     public function testSymfonyCase()
     {
-        $namespaceGenerator = new NamespaceGenerator("/var/www/dev/SfFactoryBundleCommandBundle/Tests/AppKernel/Fixtures/autoload_namespaces.php");
+        $namespaceGenerator = new NamespaceGenerator(__DIR__."/Fixtures/autoload_namespaces.php");
 
         $this->assertSame(
             'Symfony\\Bundle\\FrameworkBundle\\FrameworkBundle',
