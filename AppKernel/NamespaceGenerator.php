@@ -48,6 +48,11 @@ class NamespaceGenerator
             $composerAuthorName = array_pop($explodedPath);
             $composerPackageName = $composerAuthorName.'/'.$packageName;
 
+            $namespaceLength = strlen($namespace);
+            if ('\\' !== $namespace[$namespaceLength - 1 ]) {
+                $namespace .= '\\';
+            }
+
             $explodedNamespace = explode('\\', $namespace);
             $namespaceAuthorName = array_shift($explodedNamespace);
             array_pop($explodedNamespace);
