@@ -13,3 +13,4 @@ services:
 
     sf_factory_bundle_command.namespace_generator:
         class: %sf_factory_bundle_command.namespace_generator.class%
+        arguments: ["@kernel"]

@@ -4,6 +4,8 @@ namespace SfFactory\BundleCommandBundle\Tests\Command;
 
 use SfFactory\BundleCommandBundle\Command\InstallBundleCommand;
 
+use SfFactory\BundleCommandBundle\Tests\Mocks\AppKernel\Kernel;
+
 class InstallBundleCommandTest extends CommandTestCase
 {
     public function testDefaultCommand()
