@@ -3,50 +3,42 @@
 Everybody should be able to help. Here's how you can make this project more
 awesome:
 
- 1. [Fork the repository](https://github.com/sf-factory/SfFactoryBundleCommandBundle/fork_select);
- 2. track the upstream (original) repository: `git remote add upstream https://github.com/sf-factory/SfFactoryBundleCommandBundle.git`;
- 3. checkout to the unstable branch: `git checkout develop`;
- 4. create your own branch: `git checkout -b <type-of-work>/<micro-title>`;
- 5. make your changes and don't forget to:
-    * check that the tests pass;
-    * add some new tests;
-    * check the coding standards;
-    * look up for typos.
- 6. save your changes: `git commit -am '[<tag>] <descriptive message>'`;
- 7. get the upstream changes:
-    * `git checkout develop`;
-    * `git pull --rebase origin`
-    * `git pull --rebase upstream`;
-    * `git checkout <type-of-work>/<micro-title>`;
-    * `git rebase develop`.
- 8. publish your changes: `git push -f origin <type-of-work>/<micro-title>`;
- 9. submit a
-    [pull request](https://help.github.com/articles/creating-a-pull-request).
+1. [Fork it](https://github.com/sf-factory/SfFactoryBundleCommandBundle/fork_select)
+2. improve it
+3. submit a [pull request](https://help.github.com/articles/creating-a-pull-request)
 
-At this point you're waiting on us. We will review your pull request as fast
-as we can. We may suggest some changes or improvements or alternatives.
+Your work will then be reviewed as soon as possible (suggestions about some
+changes, improvements or alternatives may be given).
 
-## Branch naming
+Don't forget to add tests, make sure that they all pass and to fix the
+[coding standards](CONTRIBUTING.md#coding-standards)
 
-We prefix our branch names with the type of work done, which might be:
+## Help with Git
 
-* `fix`: a correction of the code (bug, security hole, typos);
-* `test`: creation or correction of tests;
-* `documentation`: creation or correction of documentation;
-* `refactoring`: improvement or cleaning of code;
-* `feature`: everything else (creation, modification
-  or removal of a functionality);
+Once the repository is forked, you should track the upstream (original) one
+using the following command:
 
-The `<micro-title>` part is a descriptive but minimalist title describing your
-work. Those should be written in lower-case and the words should be separated
-by hyphens.
+    git remote add upstream https://github.com/sf-factory/SfFactoryBundleCommandBundle.git
 
-### Examples
+Then you should create your own branch, following the
+[branch naming policy](VERSIONING.md#branch-naming):
 
-* `fix/xss-injection`;
-* `test/user-registration`;
-* `documentation/installation`;
-* `feature/cloud-pagination`.
+    git checkout -b <prefix>/<micro-title>-<issue-number>
+
+Once your changes done (`git commit -am '<descriptive-message>'`), get the
+upstream changes:
+
+    git checkout master
+    git pull --rebase origin
+    git pull --rebase upstream
+    git checkout <your-branch>
+    git rebase master
+
+Finally, publish your changes:
+
+    git push -f origin <your-branch>
+
+You should be now ready to make a pull request.
 
 ## Coding standards
 
@@ -66,5 +58,5 @@ The message itself should begin with a verb written in the past tense and
 should describe one action, because commits should be atomic (one action = one
 commit).
 
-For example, the branch `fix/negative-kisses` could have the commit
-`[NegativeKisses] Made the value absolute`.
+For example, the branch `fix/negative-total-6` could have the commit
+`[NegativeTotal] Made the value absolute`.

@@ -1,22 +1,46 @@
 # VERSIONING
 
-This file explains the versioning, branching and API model of this project.
+This file explains the versioning and branching models of this project.
 
 ## Versioning
 
 The versioning is inspired by [Semantic Versioning](http://semver.org/):
 
-* fixes or new tests will increase patch number (Z);
-* new functionalities and options will increase minor number (Y);
-* removal and modification of functionalities and options will increase major
-  number (X).
+> Given a version number MAJOR.MINOR.PATCH, increment the:
+>
+> 1. MAJOR version when you make incompatible API changes
+> 2. MINOR version when you add functionality in a backwards-compatible manner
+> 3. PATCH version when you make backwards-compatible bug fixes
+
+### Version naming
+
+Each stable version (increment on the MAJOR or MINOR digit) is named
+after a [Headmaster](http://harrypotter.wikia.com/wiki/Headmaster) of
+[Hogwarts School of Witchcraft and Wizardly](http://harrypotter.wikia.com/wiki/Hogwarts_School_of_Witchcraft_and_Wizardry).
+
+### Public API
+
+The command name and arguments are considered as the public API of this project.
 
 ## Branching Model
 
-The branching model is inspired by the article
-[A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/):
-* __master__ branch is the main stable one;
-* __develop__ is the main unstable one;
-* functionality branches come from __develop__;
-* __release/*__ branches are between __develop__ and __master__;
-* __refactoring/*__ branches come from __develop__.
+The branching is inspired by [@jbenet](https://github.com/jbenet)
+[simple git branching model](https://gist.github.com/jbenet/ee6c9ac48068889b0912):
+
+> 1. `master` must always be deployable.
+> 2. **all changes** are made through feature branches (pull-request + merge)
+> 3. rebase to avoid/resolve conflicts; merge in to `master`
+
+### Branch naming
+
+Descriptive names are used for branches, for instance: `user/appkernel-1`.
+
+This example uses a prefix for the type of work done, and a suffix to point
+to the related issue.
+
+Examples of prefixes would be:
+
+* __user/*__ for User Stories
+* __tech/*__ for Tech Stories
+* __doc/*__ for documentation
+* __fix/*__ for bug fixes
