@@ -16,6 +16,7 @@
     },
     "require-dev": {
         "behat/behat": "~3.0@beta",
+        "phpspec/phpspec": "~2.0@beta",
         "phpunit/phpunit": "~3.7"
     },
     "autoload": {
