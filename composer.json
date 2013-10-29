@@ -15,7 +15,8 @@
         "symfony/process": "~2.2"
     },
     "require-dev": {
-        "phpunit/phpunit": "3.7.*"
+        "behat/behat": "~3.0@beta",
+        "phpunit/phpunit": "~3.7"
     },
     "autoload": {
         "psr-0": { "SfFactory\\BundleCommandBundle": "" }

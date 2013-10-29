@@ -2,7 +2,10 @@
 /vendor/*
 /composer.lock
 
-# Testing
-phpunit.xml
-/report
+# Tests
+/phpunit.xml
+/report/*
+/tests/app/AppKernel.php
+/tests/app/cache/*
+/tests/app/logs/*
 
