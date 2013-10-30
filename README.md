@@ -36,6 +36,12 @@ message:
     app/console wiz:e:b -h
     app/console wiz:e:p -h
 
+## Tests
+
+You can run the tests with the following script:
+
+    sh bin/test.sh
+
 ## Further documentation
 
 Git tags are used to indicate versions, you can either check it:
