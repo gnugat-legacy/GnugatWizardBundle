@@ -22,7 +22,7 @@ class ComposerPackageProviderSpec extends ObjectBehavior
 {
     public function let(KernelInterface $kernel)
     {
-        $kernel->getRootDir()->willReturn(__DIR__.'/../../../../../tests/app');
+        $kernel->getRootDir()->willReturn(__DIR__.'/../../../../../Resources/local/app');
 
         $this->beConstructedWith($kernel);
     }

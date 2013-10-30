@@ -1,59 +1,79 @@
-# Wizard bundle
+# Gnugat Wizard Bundle
 
-No more manual edition of the `app/AppKernel.php` file during a bundle
-installation thanks to GnugatWizardBundle:
+Removes [muggle](http://en.wikipedia.org/wiki/Muggle) steps from bundle
+installation (for instance the manual edition of `app/AppKernel.php`) by
+shrinking it to a single command:
 
-    app/console wiz:e:b 'Acme\DemonBundle\AcmeDemoBundle'
-    # or
     composer require 'acme/demo-bunlde:*'
-    app/console wiz:e:p 'acme/demo-bunlde'
+
+Find out more and get enchanted with the following
+[introduction](Resources/doc/01-introduction.md).
+
+![GnugatWizardBundle logo](Resources/img/logo.jpg)
+
+## Features
+
+For now you can enable a bundle using the following commands:
+
+    # Enabling a local bundle:
+    app/console wiz:e:b "Acme\DemoBundle\AcmeDemoBundle"
+
+    # Enabling a composer package:
+    composer require "acme/demo-bundle:*"
+    app/console wiz:e:p "acme/demo-bundle"
+
+Read more about the usage with the
+[documentation](Resources/doc/03-usage.md).
+
+The following improvements are currently under heavy witchcrafting:
+
+* automagic running of the command after `composer require`
+* interractive configuration
+* bundle removal
+* bundle renaming
 
 ## Installation
 
-This is the last time you will have to follow these step to install a bundle!
+To download and install this bundle into your [Symfony2](http://symfony.com/)
+application, run the following command:
 
-First of all download the bundle using [Composer](http://getcomposer.org/):
+    curl -sS  https://raw.github.com/gnugat/GnugatWizardBundle/master/bin/installer.sh | sh
 
-    composer require gnugat/wizard-bundle
-
-Then enable the bundle by adding it in `app/AppKernel.php` (for `dev` and `test`
-environments):
-
-    <?php
-    public function registerBundles()
-    {
-        // ...
-        if (in_array($this->getEnvironment(), array('dev', 'test'))) {
-            $bundles[] = new Gnugat\Bundle\WizardBundle\GnugatWizardBundle();
-        }
-    }
-
-## Usage
-
-Lost in the shell? Don't panic! Here's how to display a friendly and helpful
-message:
-
-    app/console wiz:e:b -h
-    app/console wiz:e:p -h
+Learn more about installation by reading its
+[documentation](Resources/doc/02-installation.md).
 
 ## Tests
 
 You can run the tests with the following script:
 
-    sh bin/test.sh
+    sh bin/tester.sh
+
+Grasp more about those tests by having a look at the
+[documentation](Resources/doc/04-tests.md).
 
 ## Further documentation
 
-Git tags are used to indicate versions, you can either check it:
+You can see the current and past versions using one of the following:
 
-* [from Github](https://github.com/gnugat/GnugatWizardBundle/releases)
-* using the `git tag` command
+* the `git tag` command
+* the [releases page on Github](https://github.com/gnugat/GnugatWizardBundle/releases)
+* the file listing the [changes between versions](CHANGELOG.md)
 
 You can find more documentation at the following links:
 
 * [copyright and MIT license](LICENSE)
-* [changes between versions](CHANGELOG.md);
-* [versioning and branching models](VERSIONING.md);
-* [contribution instructions](CONTRIBUTING.md).
+* [versioning and branching models](VERSIONING.md)
+* [contribution instructions](CONTRIBUTING.md)
+* [documentation directory](Resources/doc)
 
-This project began as a hackday at [SensioLabs](http://sensiolabs.com/).
+This project began as a hackday at [SensioLabs](http://sensiolabs.com/), with
+the help of:
+
+* [Loïc Chardonnet](https://github.com/gnugat) (lead developer)
+* [Inal Djafar](https://github.com/inalgnu)
+* [Thomas Gay](https://github.com/thomas-gay)
+* [Kathryn Greer](https://github.com/KathrynG)
+* [Julien Didier](https://github.com/juliendidier)
+* [Mickaël Andrieu](https://github.com/mickaelandrieu)
+* and other
+  [awesome developers](https://github.com/gnugat/GnugatWizardBundle/graphs/contributors)

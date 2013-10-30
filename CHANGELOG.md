@@ -2,6 +2,25 @@
 
 This file logs the changes between versions.
 
+## 1.0: phyllida-spore
+
+### 1.0.0: Enable commands
+
+* improved the documentation
+* removed the `sf-factory:bundle:install` command
+* created the `wizard:enable:package` command:
+  - takes a composer package name
+  - finds its associated namespace in the installed packages
+  - makes the bundle's fully qualified classname out of it
+  - adds it in the application's kernel
+* created the `wizard:enable:bundle` command:
+  - takes a fully qualified classname
+  - adds it in the application's kernel
+* changed unit tests to specification tests (PHPSpec instead of PHPUnit)
+* created acceptance tests with behat
+* renamed the bundle to `GnugatWizardBundle`
+* changed the git flow to `master => feature => master` cycle
+
 ## 0.1.2: Fixed quality
 
 * fixed dead code
@@ -18,5 +37,5 @@ This file logs the changes between versions.
 ## 0.1.0: Initial release
 
 * created `sf-factory:bundle:install` command:
-  * `composer require` call
-  * `AppKernel` line adding
+  - `composer require` call
+  - `AppKernel` line adding

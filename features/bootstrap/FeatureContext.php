@@ -52,7 +52,7 @@ class FeatureContext implements ContextInterface
      */
     public function __construct(array $parameters)
     {
-        $this->appKernelPath = __DIR__.'/../../tests/app/AppKernel.php';
+        $this->appKernelPath = __DIR__.'/../../Resources/local/app/AppKernel.php';
         if (file_exists($this->appKernelPath)) {
             unlink($this->appKernelPath);
         }
