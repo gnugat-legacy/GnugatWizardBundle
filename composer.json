@@ -1,9 +1,9 @@
 {
-    "name": "sf-factory/bundle-command-bundle",
+    "name": "gnugat/wizard-bundle",
     "type": "symfony-bundle",
-    "description": "Installation and removal of existing Symfony2 bundles",
-    "keywords": ["symfony", "install", "remove", "bundle", "command"],
-    "homepage": "https://github.com/sf-factory/SfFactoryBundleCommandBundle",
+    "description": "Easing Symfony2 bundle installation to one single command",
+    "keywords": ["wizard", "install", "remove", "bundle", "command", "symfony"],
+    "homepage": "https://github.com/gnugat/GnugatWizardBundle",
     "license": "MIT",
     "authors": [
         {
@@ -11,14 +11,20 @@
         }
     ],
     "require": {
-        "sensio/generator-bundle": ">=2.2,<3.0",
-        "symfony/process": "~2.2"
+        "symfony/framework-bundle": ">=2.3,<3.0",
+        "symfony/console": ">=2.3,<3.0",
+
+        "sensio/generator-bundle": ">=2.3,<3.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "3.7.*"
+        "behat/behat": "~3.0@beta",
+        "phpspec/phpspec": "~2.0@beta",
+        "phpunit/phpunit": "~3.7"
     },
     "autoload": {
-        "psr-0": { "SfFactory\\BundleCommandBundle": "" }
+        "psr-0": {
+            "Gnugat\\Bundle\\WizardBundle": ""
+        }
     },
-    "target-dir": "SfFactory/BundleCommandBundle"
+    "target-dir": "Gnugat/Bundle/WizardBundle"
 }

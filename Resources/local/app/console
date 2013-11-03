@@ -1,0 +1,23 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__.'/../../../vendor/autoload.php';
+
+$appKernelPath = __DIR__.'/AppKernel.php';
+if (file_exists($appKernelPath)) {
+    unlink($appKernelPath);
+}
+copy($appKernelPath.'.skeleton', $appKernelPath);
+require_once $appKernelPath;
+
+use Symfony\Bundle\FrameworkBundle\Console\Application;
+use Symfony\Component\Console\Input\ArgvInput;
+use Symfony\Component\Debug\Debug;
+
+Debug::enable();
+
+$input = new ArgvInput();
+
+$kernel = new AppKernel('test', true);
+$application = new Application($kernel);
+$application->run($input);
