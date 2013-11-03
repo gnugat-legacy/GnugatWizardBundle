@@ -4,6 +4,12 @@ This file logs the changes between versions.
 
 ## 1.0: phyllida-spore
 
+### 1.0.1: Fixed [first Insight analysis](https://insight.sensiolabs.com/projects/dd522b32-abcf-47b8-a2ad-fa18e7c035ec/analyses/1)
+
+* added Insight widget to README
+* fixed logo size
+* fixed permission rights
+
 ### 1.0.0: Enable commands
 
 * improved the documentation
