@@ -11,6 +11,8 @@ Find out more and get enchanted with the following
 
 ![GnugatWizardBundle logo](Resources/img/logo.jpg)
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/dd522b32-abcf-47b8-a2ad-fa18e7c035ec/small.png)](https://insight.sensiolabs.com/projects/dd522b32-abcf-47b8-a2ad-fa18e7c035ec)
+
 ## Features
 
 For now you can enable a bundle using the following commands:
