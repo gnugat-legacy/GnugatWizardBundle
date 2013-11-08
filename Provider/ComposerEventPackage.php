@@ -1,0 +1,56 @@
+<?php
+
+/*
+ * This file is part of the GnugatWizardBundle project.
+ *
+ * (c) Loïc Chardonnet <loic.chardonnet@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Gnugat\Bundle\WizardBundle\Provider;
+
+use Composer\Package\PackageInterface;
+
+use Gnugat\Bundle\WizardBundle\Model\ComposerPackage;
+
+/**
+ * Uses the Package object provided by a Composer event.
+ *
+ * @author Loïc Chardonnet <loic.chardonnet@gmail.com>
+ */
+class ComposerEventPackage implements ComposerPackageProvider
+{
+    /**
+     * @var PackageInterface
+     */
+    private $composerEventPackage;
+
+    /**
+     * @param PackageInterface $composerEventPackage
+     */
+    public function __construct(PackageInterface $composerEventPackage)
+    {
+        $this->composerEventPackage = $composerEventPackage;
+    }
+
+    /**
+     * @return array
+     */
+    public function getPackages()
+    {
+        $packages = array();
+
+        $autoloadNamespaces = $this->composerEventPackage->getAutoload()['psr-0'];
+        foreach ($autoloadNamespaces as $namespace => $paths) {
+            $package = new ComposerPackage();
+            $package->namespace = trim($namespace, '\\');
+            $package->name = $this->composerEventPackage->getName();
+
+            $packages[$package->name] = $package;
+        }
+
+        return $packages;
+    }
+}

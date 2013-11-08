@@ -18,8 +18,14 @@ use Symfony\Component\HttpKernel\KernelInterface;
 /**
  * @author Loïc Chardonnet <loic.chardonnet@gmail.com>
  */
-class ComposerPackageProviderSpec extends ObjectBehavior
+class AutoloadNamespacesFileSpec extends ObjectBehavior
 {
+    public function it_is_initializable()
+    {
+        $this->shouldImplement('Gnugat\Bundle\WizardBundle\Provider\ComposerPackageProvider');
+        $this->shouldHaveType('Gnugat\Bundle\WizardBundle\Provider\AutoloadNamespacesFile');
+    }
+
     public function let(KernelInterface $kernel)
     {
         $kernel->getRootDir()->willReturn(__DIR__.'/../../../../../Resources/local/app');

@@ -6,7 +6,7 @@
     <parameters>
         <parameter key="gnugat_wizard.kernel_manipulator.class">Sensio\Bundle\GeneratorBundle\Manipulator\KernelManipulator</parameter>
         <parameter key="gnugat_wizard.package.repository.class">Gnugat\Bundle\WizardBundle\Repository\ComposerPackageRepository</parameter>
-        <parameter key="gnugat_wizard.package.provider.class">Gnugat\Bundle\WizardBundle\Provider\ComposerPackageProvider</parameter>
+        <parameter key="gnugat_wizard.package.provider.class">Gnugat\Bundle\WizardBundle\Provider\AutoloadNamespacesFile</parameter>
         <parameter key="gnugat_wizard.bundle.factory.class">Gnugat\Bundle\WizardBundle\Factory\BundleFactory</parameter>
     </parameters>
 
