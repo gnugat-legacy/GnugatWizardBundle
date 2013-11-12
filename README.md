@@ -6,7 +6,7 @@ shrinking it to a single command:
 
     composer require 'acme/demo-bunlde:*'
 
-Find out more and get enchanted with the following
+Read more about this project with the following
 [introduction](Resources/doc/01-introduction.md).
 
 ![GnugatWizardBundle logo](Resources/img/logo.jpg)
@@ -15,24 +15,17 @@ Find out more and get enchanted with the following
 
 ## Features
 
-For now you can enable a bundle using the following commands:
+    Get enchanted with the current features:
+        [x] bundle registration commands
+        [x] automatic bundle registration after running `composer require`
 
-    # Enabling a local bundle:
-    app/console wiz:e:b "Acme\DemoBundle\AcmeDemoBundle"
-
-    # Enabling a composer package:
-    composer require "acme/demo-bundle:*"
-    app/console wiz:e:p "acme/demo-bundle"
+    Improvements under heavy witchcrafting:
+        [ ] interractive configuration
+        [ ] bundle removal
+        [ ] bundle renaming
 
 Read more about the usage with the
 [documentation](Resources/doc/03-usage.md).
-
-The following improvements are currently under heavy witchcrafting:
-
-* automagic running of the command after `composer require`
-* interractive configuration
-* bundle removal
-* bundle renaming
 
 ## Installation
 

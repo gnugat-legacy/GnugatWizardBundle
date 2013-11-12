@@ -30,6 +30,7 @@ class RegisterPackageCommand extends ContainerAwareCommand
         $commandName = 'wizard:register:package';
         parent::__construct($commandName);
 
+        // @deprecated Deprecated in 1.1, to be removed in 2.0.
         $commandAlias = 'wizard:enable:package';
         $this->setAliases(array($commandAlias));
 

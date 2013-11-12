@@ -8,13 +8,14 @@ described here.
 First of all, you should download the bundle using
 [Composer](http://getcomposer.org/):
 
-    composer require gnugat/wizard-bundle
+    composer require "gnugat/wizard-bundle:~1.0"
 
-## 2. Enabling the bundle
+## 2. Registering the bundle
 
-*Heads up*: This is the kind of step you will never have to follow again!
+*Heads up*: This is the kind of step you will never have to follow again with
+other bundles!
 
-Then simply enable it by adding its fully qualified classname in the
+Then simply register it by adding its fully qualified classname in the
 application's kernel, for example like this:
 
     <?php
@@ -32,9 +33,23 @@ application's kernel, for example like this:
 
             if (in_array($this->getEnvironment(), array('dev', 'test'))) {
                 // Other bundles...
-                new Gnugat\Bundle\WizardBundle\GnugatWizardBundle(),
+                $bundles[] = new Gnugat\Bundle\WizardBundle\GnugatWizardBundle();
             }
 
             return $bundles;
+        }
+    }
+
+## 3. Binding the registration to Composer events
+
+Finally, subscribe the
+`Gnugat\Bundle\WizardBundle\EventListener\ComposerListener` class to the
+Composer's `post-package-install` event, in the `composer.json` file:
+
+    {
+        "scripts": {
+            "post-package-install": [
+                "Gnugat\\Bundle\\WizardBundle\\EventListener\\ComposerListener::registerPackage",
+            ]
         }
     }
