@@ -18,18 +18,20 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
- * Enables a Symfony2 bundle by adding the given fully qualified namespace into
- * the application's AppKernel file.
+ * Registers a Symfony2 bundle by adding the given fully qualified namespace
+ * into the application's AppKernel file.
  *
  * @author Loïc Chardonnet <loic.chardonnet@gmail.com>
  */
-class EnableBundleCommand extends ContainerAwareCommand
+class RegisterBundleCommand extends ContainerAwareCommand
 {
     public function __construct()
     {
-        $commandName = 'wizard:enable:bundle';
-
+        $commandName = 'wizard:register:bundle';
         parent::__construct($commandName);
+
+        $commandAlias = 'wizard:enable:bundle';
+        $this->setAliases(array($commandAlias));
 
         $argumentName = 'fully-qualified-classname';
         $argumentMode = InputArgument::REQUIRED;

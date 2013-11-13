@@ -23,13 +23,15 @@ use Symfony\Component\Console\Output\OutputInterface;
  *
  * @author Loïc Chardonnet <loic.chardonnet@gmail.com>
  */
-class EnablePackageCommand extends ContainerAwareCommand
+class RegisterPackageCommand extends ContainerAwareCommand
 {
     public function __construct()
     {
-        $commandName = 'wizard:enable:package';
-
+        $commandName = 'wizard:register:package';
         parent::__construct($commandName);
+
+        $commandAlias = 'wizard:enable:package';
+        $this->setAliases(array($commandAlias));
 
         $argumentName = 'name';
         $argumentMode = InputArgument::REQUIRED;

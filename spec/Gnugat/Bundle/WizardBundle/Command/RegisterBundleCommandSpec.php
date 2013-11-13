@@ -16,14 +16,14 @@ use PhpSpec\ObjectBehavior;
 /**
  * @author Loïc Chardonnet <loic.chardonnet@gmail.com>
  */
-class EnableBundleCommandSpec extends ObjectBehavior
+class RegisterBundleCommandSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('Gnugat\Bundle\WizardBundle\Command\EnableBundleCommand');
+        $this->shouldHaveType('Gnugat\Bundle\WizardBundle\Command\RegisterBundleCommand');
         $this->shouldHaveType('Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand');
 
-        $this->getName()->shouldBe('wizard:enable:bundle');
+        $this->getName()->shouldBe('wizard:register:bundle');
         $this->getDefinition()->hasArgument('fully-qualified-classname')->shouldBe(true);
     }
 }

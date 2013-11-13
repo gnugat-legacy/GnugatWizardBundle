@@ -23,7 +23,7 @@ if (!isset(\$composerConfig['scripts']['post-package-install'])) {
     \$composerConfig['scripts']['post-package-install'] = array();
 }
 
-\$composerConfig['scripts']['post-package-install'][] = 'Gnugat\\Bundle\\WizardBundle\\EventListener\\ComposerEvent::postPackageInstall';
+\$composerConfig['scripts']['post-package-install'][] = 'Gnugat\\Bundle\\WizardBundle\\EventListener\\ComposerListener::registerPackage';
 \$composerConfigFile = json_encode(\$composerConfig, JSON_PRETTY_PRINT);
 file_put_contents('composer.json', \$composerConfigFile);
 EOF

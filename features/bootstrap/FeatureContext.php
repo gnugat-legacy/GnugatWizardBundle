@@ -95,7 +95,7 @@ class FeatureContext implements ContextInterface
     private function makeInput()
     {
         if ('fully qualified classname' === $this->formatOption) {
-            $commandName = 'wizard:enable:bundle';
+            $commandName = 'wizard:register:bundle';
             $argumentName = 'fully-qualified-classname';
             if ('an enabled' === $this->bundleNameArgument) {
                 $argument = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -105,7 +105,7 @@ class FeatureContext implements ContextInterface
             }
         }
         if ('composer package name' === $this->formatOption) {
-            $commandName = 'wizard:enable:package';
+            $commandName = 'wizard:register:package';
             $argumentName = 'name';
             if ('an enabled' === $this->bundleNameArgument) {
                 $argument = 'symfony/framework-bundle';

@@ -16,14 +16,14 @@ use PhpSpec\ObjectBehavior;
 /**
  * @author Loïc Chardonnet <loic.chardonnet@gmail.com>
  */
-class EnablePackageCommandSpec extends ObjectBehavior
+class RegisterPackageCommandSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('Gnugat\Bundle\WizardBundle\Command\EnablePackageCommand');
+        $this->shouldHaveType('Gnugat\Bundle\WizardBundle\Command\RegisterPackageCommand');
         $this->shouldHaveType('Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand');
 
-        $this->getName()->shouldBe('wizard:enable:package');
+        $this->getName()->shouldBe('wizard:register:package');
         $this->getDefinition()->hasArgument('name')->shouldBe(true);
     }
 }

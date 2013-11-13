@@ -23,7 +23,7 @@ use Gnugat\Bundle\WizardBundle\DependencyInjection\Factory;
  *
  * @author Loïc Chardonnet <loic.chardonnet@gmail.com>
  */
-class ComposerEvent
+class ComposerListener
 {
     /**
      * On Composer's "post-package-install" event, register the package.
