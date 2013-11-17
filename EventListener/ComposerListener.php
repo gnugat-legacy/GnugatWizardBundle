@@ -30,7 +30,7 @@ class ComposerListener
      *
      * @param Event $event
      */
-    public static function postPackageInstall(Event $event)
+    public static function registerPackage(Event $event)
     {
         $installedPackage = $event->getOperation()->getPackage();
 
