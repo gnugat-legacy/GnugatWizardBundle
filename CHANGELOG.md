@@ -4,6 +4,11 @@ This file logs the changes between versions.
 
 ## 1.1: edessa-sakndenberg
 
+### 1.1.2: Bug fix
+
+* fixed syntax error
+* fixed installation version
+
 ### 1.1.1: Fixed [fourth Insight analysis](https://insight.sensiolabs.com/projects/dd522b32-abcf-47b8-a2ad-fa18e7c035ec/analyses/4)
 
 * removed unused `use` statement
