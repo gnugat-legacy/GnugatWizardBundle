@@ -4,6 +4,10 @@ This file logs the changes between versions.
 
 ## 1.1: edessa-sakndenberg
 
+### 1.1.1: Fixed [fourth Insight analysis](https://insight.sensiolabs.com/projects/dd522b32-abcf-47b8-a2ad-fa18e7c035ec/analyses/4)
+
+* removed unused `use` statement
+
 ### 1.1.0: Automatic registration on bundle installation
 
 * changed `enable` verb to `register`
