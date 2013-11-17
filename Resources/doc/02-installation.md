@@ -8,7 +8,7 @@ described here.
 First of all, you should download the bundle using
 [Composer](http://getcomposer.org/):
 
-    composer require "gnugat/wizard-bundle:~1.0"
+    composer require "gnugat/wizard-bundle:~1"
 
 ## 2. Registering the bundle
 

@@ -7,7 +7,7 @@ if ! hash "composer" 2>/dev/null && ! hash "composer.phar" 2>/dev/null; then
 fi
 
 echo '[composer] Downloading the bundle'
-composer require "gnugat/wizard-bundle:~1.0"
+composer require "gnugat/wizard-bundle:~1"
 
 echo '[php] Subscribing to the post-package-install event'
 php -a <<EOF
