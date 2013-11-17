@@ -11,8 +11,6 @@
 
 namespace Gnugat\Bundle\WizardBundle\Provider;
 
-use Gnugat\Bundle\WizardBundle\Model\ComposerPackage;
-
 /**
  * Provides a collection of ComposerPackage.
  *
