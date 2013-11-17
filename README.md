@@ -1,10 +1,11 @@
 # Gnugat Wizard Bundle
 
 Removes [muggle](http://en.wikipedia.org/wiki/Muggle) steps from bundle
-installation (for instance the manual edition of `app/AppKernel.php`) by
-shrinking it to a single command:
+installation by shrinking it to a single command:
 
     composer require 'acme/demo-bunlde:*'
+
+No more manual edition of `app/AppKernel.php`, everything is done automagically!
 
 Read more about this project with the following
 [introduction](Resources/doc/01-introduction.md).

@@ -47,7 +47,7 @@ The project follows the
 
 In order to check and fix them, we use the
 [PHP CS fixer tool](http://cs.sensiolabs.org/):
-`php-cs-fixer fix . --config=sf21`
+`php-cs-fixer fix .`
 
 ## Commit messages
 
