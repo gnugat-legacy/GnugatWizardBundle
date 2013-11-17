@@ -2,6 +2,18 @@
 
 This file logs the changes between versions.
 
+## 1.1: edessa-sakndenberg
+
+### 1.1.0: Automatic registration on bundle installation
+
+* changed `enable` verb to `register`
+* created the Composer event listener:
+  - takes a composer package event (e.g. `post-package-install`)
+  - extracts its composer package name
+  - finds its associated namespace
+  - makes the bundle's fully qualified classname out of it
+  - adds it in the application's kernel
+
 ## 1.0: phyllida-spore
 
 ### 1.0.1: Fixed [first Insight analysis](https://insight.sensiolabs.com/projects/dd522b32-abcf-47b8-a2ad-fa18e7c035ec/analyses/1)
