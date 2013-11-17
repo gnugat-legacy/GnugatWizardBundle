@@ -68,6 +68,6 @@ class ComposerListener
         $composerPackage = $packageRepository->findOneByName($package->getName());
         $bundle = $bundleFactory->make($composerPackage->namespace);
 
-        $kernelManipulator->addBundle($bundle->fullyQualifiedClassname)
+        $kernelManipulator->addBundle($bundle->fullyQualifiedClassname);
     }
 }
