@@ -18,7 +18,7 @@ use PhpSpec\ObjectBehavior;
  */
 class RegisterBundleCommandSpec extends ObjectBehavior
 {
-    function it_is_initializable()
+    public function it_is_initializable()
     {
         $this->shouldHaveType('Gnugat\Bundle\WizardBundle\Command\RegisterBundleCommand');
         $this->shouldHaveType('Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand');

@@ -13,8 +13,6 @@ namespace Gnugat\Bundle\WizardBundle\Provider;
 
 use Gnugat\Bundle\WizardBundle\Model\ComposerPackage;
 
-use Symfony\Component\HttpKernel\KernelInterface;
-
 /**
  * Provides a collection of ComposerPackage.
  *
