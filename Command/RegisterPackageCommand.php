@@ -56,5 +56,7 @@ class RegisterPackageCommand extends ContainerAwareCommand
         $bundle = $bundleFactory->make($composerPackage->namespace);
 
         $kernelManipulator->addBundle($bundle->fullyQualifiedClassname);
+
+        $output->writeln(sprintf('Just finished to register "%s"', $bundle->fullyQualifiedClassname));
     }
 }

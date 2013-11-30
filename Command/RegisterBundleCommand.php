@@ -51,5 +51,7 @@ class RegisterBundleCommand extends ContainerAwareCommand
         $fullyQualifiedClassname = $input->getArgument('fully-qualified-classname');
 
         $kernelManipulator->addBundle($fullyQualifiedClassname);
+
+        $output->writeln(sprintf('Just finished to register "%s"', $fullyQualifiedClassname));
     }
 }
