@@ -25,10 +25,12 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class RegisterPackageCommand extends ContainerAwareCommand
 {
-    public function __construct()
+    /**
+     * {@inheritdoc}
+     */
+    public function configure()
     {
-        $commandName = 'wizard:register:package';
-        parent::__construct($commandName);
+        $this->setName('wizard:register:package');
 
         // @deprecated Deprecated in 1.1, to be removed in 2.0.
         $commandAlias = 'wizard:enable:package';

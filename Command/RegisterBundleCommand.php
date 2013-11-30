@@ -25,10 +25,12 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class RegisterBundleCommand extends ContainerAwareCommand
 {
-    public function __construct()
+    /**
+     * {@inheritdoc}
+     */
+    public function configure()
     {
-        $commandName = 'wizard:register:bundle';
-        parent::__construct($commandName);
+        $this->setName('wizard:register:bundle');
 
         // @deprecated Deprecated in 1.1, to be removed in 2.0.
         $commandAlias = 'wizard:enable:bundle';
