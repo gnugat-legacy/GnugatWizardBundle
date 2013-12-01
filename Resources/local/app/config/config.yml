@@ -1,2 +1,8 @@
 framework:
     secret: "Three can keep a secret, if two of them are dead."
+
+    validation: ~
+
+    # All of these are necessary to enable validation
+    form: ~
+    session: ~

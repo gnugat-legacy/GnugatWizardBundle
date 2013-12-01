@@ -1,0 +1,8 @@
+Gnugat\Bundle\WizardBundle\Model\Bundle:
+    properties:
+        fullyQualifiedClassname:
+            - NotBlank: ~
+            - "Gnugat\\Bundle\\WizardBundle\\Validator\\EndsWithBundle": ~
+            - "Gnugat\\Bundle\\WizardBundle\\Validator\\HasNamespaceWord": ~
+            - "Gnugat\\Bundle\\WizardBundle\\Validator\\DoesNotContainReservedKeyword": ~
+            - "Gnugat\\Bundle\\WizardBundle\\Validator\\IsNamespaceWithVendor": ~

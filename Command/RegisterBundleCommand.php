@@ -11,6 +11,8 @@
 
 namespace Gnugat\Bundle\WizardBundle\Command;
 
+use Gnugat\Bundle\WizardBundle\Model\Bundle;
+
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 
 use Symfony\Component\Console\Input\InputInterface;
@@ -52,8 +54,29 @@ class RegisterBundleCommand extends ContainerAwareCommand
 
         $fullyQualifiedClassname = $input->getArgument('fully-qualified-classname');
 
+        $this->validate($input);
         $kernelManipulator->addBundle($fullyQualifiedClassname);
 
         $output->writeln(sprintf('Just finished to register "%s"', $fullyQualifiedClassname));
+    }
+
+    /**
+     * @param InputInterface $input
+     *
+     * @throws \InvalidArgumentException If the given namespace isn't valid
+     */
+    private function validate(InputInterface $input)
+    {
+        $validator = $this->getContainer()->get('validator');
+
+        $fullyQualifiedClassname = $input->getArgument('fully-qualified-classname');
+        $bundle = new Bundle($fullyQualifiedClassname);
+
+        $errors = $validator->validate($bundle);
+        if (count($errors) > 0) {
+            $errorsString = (string) $errors;
+
+            throw new \InvalidArgumentException($errorsString);
+        }
     }
 }
