@@ -4,6 +4,14 @@ This file logs the changes between versions.
 
 ## 1.1: edessa-sakndenberg
 
+### 1.1.3: Community feedback
+
+* fixed `installer.sh` script for PHP 5.5
+* fixed stability by moving composer to the development requirements
+* added input validation for the `wizard:register:bundle` command
+* added messages to report when the task is done
+* changed from `__construct` to `congirure` in commands
+
 ### 1.1.2: Bug fix
 
 * fixed syntax error
