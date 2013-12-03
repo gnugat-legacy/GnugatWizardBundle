@@ -9,9 +9,15 @@ fi
 echo '[composer] Downloading the bundle'
 composer require "gnugat/wizard-bundle:~1"
 
+PHP_VERSION=`php -v`
+PHP_OPEN_TAG=''
+if ( echo $PHP_VERSION | grep -vq "PHP 5.5" ); then
+    PHP_OPEN_TAG='<?php'
+fi
+
 echo '[php] Subscribing to the post-package-install event'
 php -a <<EOF
-<?php
+$PHP_OPEN_TAG 
 \$composerConfigFile = file_get_contents('composer.json');
 \$composerConfig = json_decode(\$composerConfigFile, true);
 
