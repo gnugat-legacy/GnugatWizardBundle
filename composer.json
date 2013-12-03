@@ -15,14 +15,14 @@
         "symfony/console": ">=2.3,<3.0",
         "symfony/validator": ">=2.3,<3.0",
 
-        "composer/composer": "~1.0@alpha",
-
         "sensio/generator-bundle": ">=2.3,<3.0"
     },
     "require-dev": {
         "behat/behat": "~3.0@beta",
         "phpspec/phpspec": "~2.0@beta",
         "phpunit/phpunit": "~3.7",
+
+        "composer/composer": "~1.0@alpha",
 
         "symfony/form": ">=2.3,<3.0"
     },
