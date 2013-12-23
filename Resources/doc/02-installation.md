@@ -1,12 +1,27 @@
 # Installation
 
-The `bin/installer.sh` script allows you to do automagically all the steps
-described here.
+By default, running the `bin/installer.sh` script will download the composer
+plugin ([gnugat/wizard-plugin](https://github.com/gnugat/wizard-plugin)) which
+requires this bundle.
+
+This means once the script is done, you can simply run
+`composer require "<package>:<version>"` to download and register a bundle in
+your Symfony2 application.
+
+If you want to install this bundle without the plugin, the script provides a
+`--bundle-only` option.
+
+If you want to manually install the bundle, just follow the following steps
+(those are exactly what the `bin/installer.sh` script does).
 
 ## 1. Downloading
 
 First of all, you should download the bundle using
 [Composer](http://getcomposer.org/):
+
+    composer require "gnugat/wizard-plugin:~1"
+
+If you want to install the bundle without the plugin, use:
 
     composer require "gnugat/wizard-bundle:~1"
 
@@ -40,16 +55,11 @@ application's kernel, for example like this:
         }
     }
 
-## 3. Binding the registration to Composer events
+##  Next readings
 
-Finally, subscribe the
-`Gnugat\Bundle\WizardBundle\EventListener\ComposerListener` class to the
-Composer's `post-package-install` event, in the `composer.json` file:
+* [usage](03-usage.md)
+* [tests](04-tests.md)
 
-    {
-        "scripts": {
-            "post-package-install": [
-                "Gnugat\\Bundle\\WizardBundle\\EventListener\\ComposerListener::registerPackage",
-            ]
-        }
-    }
+## Previous readings
+
+* [introduction](01-introduction.md)

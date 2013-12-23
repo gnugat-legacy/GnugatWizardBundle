@@ -20,7 +20,7 @@ it, a "local application" is available. You can list this bundle commands using:
     php Resources/local/app/console list wizard
 
 *Heads up*: at each run the application's kernel is re-initialized, to prevent
-exceptions to be raised after trying the enable command.
+exceptions to be raised after trying the commands.
 
 ## Acceptance tests
 
@@ -50,3 +50,9 @@ You can find them in the `features/bootstrap` directory.
 
 In order to ensure each class behaves in the expected way on a technical level,
 this project uses specification tests which are located in the `spec` directory.
+
+##  Previous readings
+
+* [introduction](01-introduction.md)
+* [installation](02-installation.md)
+* [usage](03-usage.md)
