@@ -1,38 +1,42 @@
 #!/bin/sh
 
-if ! hash "composer" 2>/dev/null && ! hash "composer.phar" 2>/dev/null; then
-    echo '[curl] Getting Composer, the PHP dependency manager'
-    curl -sS https://getcomposer.org/installer | php
-    mv composeR.phar composer
-fi
+usage()
+{
+    cat <<EOT
+Usage:
+    installer.sh [--bundle-only]
+    installer.sh -h | --help
 
-echo '[composer] Downloading the bundle'
-composer require "gnugat/wizard-bundle:~1"
-
-PHP_VERSION=`php -v`
-PHP_OPEN_TAG=''
-if ( echo $PHP_VERSION | grep -vq "PHP 5.5" ); then
-    PHP_OPEN_TAG='<?php'
-fi
-
-echo '[php] Subscribing to the post-package-install event'
-php -a <<EOF
-$PHP_OPEN_TAG 
-\$composerConfigFile = file_get_contents('composer.json');
-\$composerConfig = json_decode(\$composerConfigFile, true);
-
-if (!isset(\$composerConfig['scripts'])) {
-    \$composerConfig['scripts'] = array();
+Options:
+    --bundle-only Does not install gnugat/wizard-plugin
+    -h --help     Shows this screen
+EOT
 }
 
-if (!isset(\$composerConfig['scripts']['post-package-install'])) {
-    \$composerConfig['scripts']['post-package-install'] = array();
-}
+package='gnugat/wizard-plugin:~1'
 
-\$composerConfig['scripts']['post-package-install'][] = 'Gnugat\\Bundle\\WizardBundle\\EventListener\\ComposerListener::registerPackage';
-\$composerConfigFile = json_encode(\$composerConfig, JSON_PRETTY_PRINT);
-file_put_contents('composer.json', \$composerConfigFile);
-EOF
+case $1 in
+    -h | --help)
+        usage
+        exit
+        ;;
+    --bundle-only)
+        package='gnugat/wizard-bundle:~1'
+        ;;
+    '')
+        ;;
+    *)
+        echo "ERROR: unknown argument \"$1\""
+        usage
+        exit 1
+        ;;
+esac
 
-echo '[sed] Enabling the bundle'
+echo '[curl] Getting Composer, the PHP dependency manager'
+curl -sS https://getcomposer.org/installer | php
+
+echo '[composer] Downloading the dependencies'
+php composer.phar require "$package"
+
+echo '[sed] Registering GnugatWizardBundle'
 sed -i 's/        }/            $bundles[] = new Gnugat\\Bundle\\WizardBundle\\GnugatWizardBundle();\n        }/' app/AppKernel.php
