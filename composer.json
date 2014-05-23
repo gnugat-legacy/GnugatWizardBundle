@@ -18,8 +18,8 @@
         "sensio/generator-bundle": ">=2.3,<3.0"
     },
     "require-dev": {
-        "behat/behat": "~3.0@beta",
-        "phpspec/phpspec": "~2.0@beta",
+        "behat/behat": "~2.0",
+        "phpspec/phpspec": "~2.0",
         "phpunit/phpunit": "~3.7",
 
         "composer/composer": "~1.0@alpha",
