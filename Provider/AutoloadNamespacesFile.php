@@ -28,47 +28,46 @@ class AutoloadNamespacesFile implements ComposerPackageProvider
     private $autoloadNamespacesPath;
 
     /**
+     * @var string
+     */
+    private $autoloadPsr4Path;
+
+    /**
      * @param KernelInterface $kernel
      */
     public function __construct(KernelInterface $kernel)
     {
         $this->autoloadNamespacesPath = $kernel->getRootDir().'/../vendor/composer/autoload_namespaces.php';
+        $this->autoloadPsr4Path = $kernel->getRootDir().'/../vendor/composer/autoload_psr4.php';
     }
 
     /**
-     * @return array
+     * {@inheritdoc}
      */
-    public function getPackages()
+    public function getPackage($name)
     {
         $packages = array();
 
-        $autoloadNamespaces = include($this->autoloadNamespacesPath);
-        foreach ($autoloadNamespaces as $namespace => $paths) {
-            $package = new ComposerPackage();
-            $package->namespace = trim($namespace, '\\');
-            $package->name = $this->getNameFromPaths($paths);
-
-            $packages[$package->name] = $package;
+        $autoloadNamespaces = array();
+        if (file_exists($this->autoloadNamespacesPath)) {
+            $psr1 = include($this->autoloadNamespacesPath);
+            $autoloadNamespaces = array_merge($autoloadNamespaces, $psr1);
+        }
+        if (file_exists($this->autoloadPsr4Path)) {
+            $psr4 = include($this->autoloadPsr4Path);
+            $autoloadNamespaces = array_merge($autoloadNamespaces, $psr4);
         }
 
-        return $packages;
-    }
+        foreach ($autoloadNamespaces as $namespace => $paths) {
+            if (false !== strpos($paths[0], $name)) {
+                $package = new ComposerPackage();
+                $package->namespace = trim($namespace, '\\');
+                $package->name = $name;
 
-    /**
-     * @param array $paths
-     *
-     * @return string
-     */
-    public function getNameFromPaths(array $paths)
-    {
-        $path = array_pop($paths);
+                return $package;
+            }
+        }
 
-        $explodedPath = explode('/', $path);
-        $libraryName = array_pop($explodedPath);
-        $authorName = array_pop($explodedPath);
-
-        $name = $authorName.'/'.$libraryName;
-
-        return $name;
+        throw new \Exception(sprintf('Package "%s" not installed', $name));
     }
 }

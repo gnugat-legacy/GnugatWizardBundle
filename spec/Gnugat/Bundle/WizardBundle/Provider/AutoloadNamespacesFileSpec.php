@@ -33,19 +33,23 @@ class AutoloadNamespacesFileSpec extends ObjectBehavior
         $this->beConstructedWith($kernel);
     }
 
-    public function it_retrieves_name_and_namespace_from_autoload_namespaces_file()
-    {
-        $packages = $this->getPackages();
-
-        $packages->shouldBeArray();
-    }
-
-    public function it_gets_package_name_from_paths()
+    public function it_retrieves_package_from_psr1_file()
     {
         $name = 'acme/demo-bundle';
-        $path = __DIR__.'/../../../../../tests/vendor';
+        $namespace = 'Acme\\Bundle\\DemoBundle';
+        $package = $this->getPackage($name);
 
-        $paths = array($path.'/'.$name);
-        $this->getNameFromPaths($paths)->shouldBe($name);
+        $package->name->shouldBe($name);
+        $package->namespace->shouldBe($namespace);
+    }
+
+    public function it_retrieves_package_from_psr4_file()
+    {
+        $name = 'monolog/monolog';
+        $namespace = 'Monolog';
+        $package = $this->getPackage($name);
+
+        $package->name->shouldBe($name);
+        $package->namespace->shouldBe($namespace);
     }
 }

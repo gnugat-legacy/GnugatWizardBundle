@@ -19,7 +19,11 @@ namespace Gnugat\Bundle\WizardBundle\Provider;
 interface ComposerPackageProvider
 {
     /**
+     * @param $name
+     *
      * @return array
+     *
+     * @throws \Exception If the package isn't installed
      */
-    public function getPackages();
+    public function getPackage($name);
 }

@@ -36,21 +36,32 @@ class ComposerEventPackage implements ComposerPackageProvider
     }
 
     /**
-     * @return array
+     * {@inheritdoc}
      */
-    public function getPackages()
+    public function getPackage($name)
     {
         $packages = array();
 
-        $autoloadNamespaces = $this->composerEventPackage->getAutoload()['psr-0'];
-        foreach ($autoloadNamespaces as $namespace => $paths) {
-            $package = new ComposerPackage();
-            $package->namespace = trim($namespace, '\\');
-            $package->name = $this->composerEventPackage->getName();
+        $autoload = $this->composerEventPackage->getAutoload();
 
-            $packages[$package->name] = $package;
+        $autoloadNamespaces = array();
+        if (isset($autoload['psr-0'])) {
+            $autoloadNamespaces = array_merge($autoloadNamespaces, $autoload['psr-0']);
+        }
+        if (isset($autoload['psr-4'])) {
+            $autoloadNamespaces = array_merge($autoloadNamespaces, $autoload['psr-4']);
         }
 
-        return $packages;
+        foreach ($autoloadNamespaces as $namespace => $paths) {
+            if (false !== strpos($paths[0], $name)) {
+                $package = new ComposerPackage();
+                $package->namespace = trim($namespace, '\\');
+                $package->name = $name;
+
+                return $package;
+            }
+        }
+
+        throw new \Exception(sprintf('Package "%s" not installed', $name));
     }
 }

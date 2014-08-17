@@ -49,6 +49,6 @@ fi
 
 if $has_specification_tests; then
     echo '[phpspec] Running specification tests'
-    php vendor/bin/phpspec
+    php vendor/bin/phpspec run
     rm -rf src # Fixes PHPSpec bug (creates a src directory)
 fi

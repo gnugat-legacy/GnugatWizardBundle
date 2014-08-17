@@ -20,6 +20,12 @@ use Composer\Package\PackageInterface;
  */
 class ComposerEventPackageSpec extends ObjectBehavior
 {
+    const PACKAGE_NAME_PSR1 = 'acme/demo-bundle';
+    const PACKAGE_NAMESPACE_PSR1 = 'Acme\Bundle\AcmeDemo';
+
+    const PACKAGE_NAME_PSR4 = 'monolog/monolog';
+    const PACKAGE_NAMESPACE_PSR4 = 'Monolog';
+
     public function it_is_initializable()
     {
         $this->shouldImplement('Gnugat\Bundle\WizardBundle\Provider\ComposerPackageProvider');
@@ -30,19 +36,30 @@ class ComposerEventPackageSpec extends ObjectBehavior
     {
         $autoloadNamespaces = array(
             'psr-0' => array(
-                'Acme\Bundle\AcmeDemo' => '',
+                self::PACKAGE_NAMESPACE_PSR1 => array(self::PACKAGE_NAME_PSR1),
+            ),
+            'psr-4' => array(
+                self::PACKAGE_NAMESPACE_PSR4 => array(self::PACKAGE_NAME_PSR4),
             ),
         );
         $package->getAutoload()->willReturn($autoloadNamespaces);
-        $package->getName()->willReturn('acme/demo-bundle');
 
         $this->beConstructedWith($package);
     }
 
-    public function it_retrieves_name_and_namespace_from_composer_event_package()
+    public function it_retrieves_package_from_psr1_autoload()
     {
-        $packages = $this->getPackages();
+        $package = $this->getPackage(self::PACKAGE_NAME_PSR1);
 
-        $packages->shouldBeArray();
+        $package->name->shouldBe(self::PACKAGE_NAME_PSR1);
+        $package->namespace->shouldBe(self::PACKAGE_NAMESPACE_PSR1);
+    }
+
+    public function it_retrieves_package_from_psr4_autoload()
+    {
+        $package = $this->getPackage(self::PACKAGE_NAME_PSR4);
+
+        $package->name->shouldBe(self::PACKAGE_NAME_PSR4);
+        $package->namespace->shouldBe(self::PACKAGE_NAMESPACE_PSR4);
     }
 }
