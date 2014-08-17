@@ -29,7 +29,7 @@ class ComposerPackageRepositorySpec extends ObjectBehavior
         $package->name = self::PACKAGE_NAME;
         $package->namespace = self::PACKAGE_NAMESPACE;
 
-        $provider->getPackages()->willReturn(array(self::PACKAGE_NAME => $package));
+        $provider->getPackage(self::PACKAGE_NAME)->willReturn($package);
 
         $this->beConstructedWith($provider);
     }

@@ -40,8 +40,6 @@ class ComposerPackageRepository
      */
     public function findOneByName($name)
     {
-        $packages = $this->provider->getPackages();
-
-        return $packages[$name];
+        return $this->provider->getPackage($name);
     }
 }
