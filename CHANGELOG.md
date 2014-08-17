@@ -2,6 +2,13 @@
 
 This file logs the changes between versions.
 
+## 1.2: fytherley-undercliffe
+
+### 1.2.0: PSR4 support
+
+* added PSR4 support
+* fixed dependencies version to stable ones
+
 ## 1.1: edessa-sakndenberg
 
 ### 1.1.3: Community feedback
