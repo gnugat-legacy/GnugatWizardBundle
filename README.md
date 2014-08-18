@@ -12,6 +12,7 @@ Read more about this project with the following
 ![GnugatWizardBundle logo](Resources/img/logo.jpg)
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/dd522b32-abcf-47b8-a2ad-fa18e7c035ec/small.png)](https://insight.sensiolabs.com/projects/dd522b32-abcf-47b8-a2ad-fa18e7c035ec)
+[![Travis CI](https://travis-ci.org/gnugat/GnugatWizardBundle.png)](https://travis-ci.org/gnugat/GnugatWizardBundle)
 
 ## Installation
 
