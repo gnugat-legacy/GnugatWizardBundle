@@ -37,6 +37,3 @@ curl -sS https://getcomposer.org/installer | php
 
 echo '[composer] Downloading the dependencies'
 php composer.phar require "$package"
-
-echo '[sed] Registering GnugatWizardBundle'
-sed -i 's/        }/            $bundles[] = new Gnugat\\Bundle\\WizardBundle\\GnugatWizardBundle();\n        }/' app/AppKernel.php
