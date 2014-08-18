@@ -32,10 +32,6 @@ class RegisterPackageCommand extends ContainerAwareCommand
     {
         $this->setName('wizard:register:package');
 
-        // @deprecated Deprecated in 1.1, to be removed in 2.0.
-        $commandAlias = 'wizard:enable:package';
-        $this->setAliases(array($commandAlias));
-
         $argumentName = 'name';
         $argumentMode = InputArgument::REQUIRED;
         $argumentDescription = 'The name of the composer package to enable';

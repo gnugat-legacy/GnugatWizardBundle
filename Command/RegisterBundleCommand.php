@@ -34,10 +34,6 @@ class RegisterBundleCommand extends ContainerAwareCommand
     {
         $this->setName('wizard:register:bundle');
 
-        // @deprecated Deprecated in 1.1, to be removed in 2.0.
-        $commandAlias = 'wizard:enable:bundle';
-        $this->setAliases(array($commandAlias));
-
         $argumentName = 'fully-qualified-classname';
         $argumentMode = InputArgument::REQUIRED;
         $argumentDescription = 'The fully qualified classname of the bundle to enable';

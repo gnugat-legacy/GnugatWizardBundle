@@ -6,6 +6,7 @@ This file logs the changes between versions.
 
 ### 2.0.0: Integration in Symfony Standard Edition
 
+* removed `enable` aliases from the commands [BC BREAK]
 * udated documentation
 * removed `DependencyInjection\Factory`
 * removed `EventListener\ComposerListener`
