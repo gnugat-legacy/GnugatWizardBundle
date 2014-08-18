@@ -6,7 +6,8 @@ This file logs the changes between versions.
 
 ### 2.0.0: Integration in Symfony Standard Edition
 
-* removed `ComposerListener`
+* removed `DependencyInjection\Factory`
+* removed `EventListener\ComposerListener`
 
 ## 1.2: fytherley-undercliffe
 
