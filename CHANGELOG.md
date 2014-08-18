@@ -2,6 +2,12 @@
 
 This file logs the changes between versions.
 
+## 2.0: albus-dumbledore
+
+### 2.0.0: Integration in Symfony Standard Edition
+
+* removed `ComposerListener`
+
 ## 1.2: fytherley-undercliffe
 
 ### 1.2.0: PSR4 support
