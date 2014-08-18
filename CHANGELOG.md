@@ -6,6 +6,7 @@ This file logs the changes between versions.
 
 ### 2.0.0: Integration in Symfony Standard Edition
 
+* udated documentation
 * removed `DependencyInjection\Factory`
 * removed `EventListener\ComposerListener`
 

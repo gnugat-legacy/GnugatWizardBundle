@@ -28,13 +28,6 @@ into a Symfony2 application, you need to follow at least the 2 following steps:
 While the first step is achievable by running a command thanks to Composer, the
 second one requires a manual edition of the application's kernel.
 
-In the worst case scenario, the following steps can be added:
-
-* creating a bundle (which can extends the installed one)
-* creating some classes
-* configuring the bundle
-* importing its routes
-
 ##  Next readings
 
 * [installation](02-installation.md)

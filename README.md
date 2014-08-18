@@ -1,11 +1,10 @@
 # Gnugat Wizard Bundle
 
-Removes [muggle](http://en.wikipedia.org/wiki/Muggle) steps from bundle
-installation by shrinking it to a single command:
+Provides two commands to register a bundle in a [Symfony2](http://symfony.com/)
+application.
 
-    composer require 'acme/demo-bunlde:*'
-
-No more manual edition of `app/AppKernel.php`, everything is done automagically!
+No more manual edition of `app/AppKernel.php`, everything is done
+programmatically!
 
 Read more about this project with the following
 [introduction](Resources/doc/01-introduction.md).
@@ -14,29 +13,29 @@ Read more about this project with the following
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/dd522b32-abcf-47b8-a2ad-fa18e7c035ec/small.png)](https://insight.sensiolabs.com/projects/dd522b32-abcf-47b8-a2ad-fa18e7c035ec)
 
-## Features
-
-    Get enchanted with the current features:
-        [x] bundle registration commands
-        [x] automatic bundle registration after running `composer require`
-
-    Improvements under heavy witchcrafting:
-        [ ] interractive configuration
-        [ ] bundle removal
-        [ ] bundle renaming
-
-Read more about the usage with the
-[documentation](Resources/doc/03-usage.md).
-
 ## Installation
 
-To download and install this bundle into your [Symfony2](http://symfony.com/)
-application, run the following command:
+Install this bundle using [Composer](https://getcomposer.org/):
 
-    curl -sS  https://raw.github.com/gnugat/GnugatWizardBundle/master/bin/installer.sh | sh
+    composer require gnugat/wizard-plugin:~1
 
-Learn more about installation by reading its
-[documentation](Resources/doc/02-installation.md).
+Then register it in the application's kernel (this is the last time you'll need
+to do this).
+
+Discover more with the [installation documentation](Resources/doc/02-installation.md).
+
+## Usage
+
+If you know the Fully Qualified ClassName (FCQN) of the bundle (it's the class
+name with its full namespace), then run:
+
+    app/console wizard:register:bundle 'Acme\Bundle\AcmeDemoBundle'
+
+If you know the [Composer](https://getcomposer.org/) package name, then run:
+
+    app/console wizard:register:package 'acme/demo-bundle'
+
+Read more about the usage with the [documentation](Resources/doc/03-usage.md).
 
 ## Tests
 
@@ -63,13 +62,15 @@ You can find more documentation at the following links:
 * [documentation directory](Resources/doc)
 
 This project began as a hackday at [SensioLabs](http://sensiolabs.com/), with
-the help of:
+the silent help (they don't appear in the commits) of:
 
-* [Loïc Chardonnet](https://github.com/gnugat) (lead developer)
 * [Inal Djafar](https://github.com/inalgnu)
 * [Thomas Gay](https://github.com/thomas-gay)
 * [Kathryn Greer](https://github.com/KathrynG)
 * [Julien Didier](https://github.com/juliendidier)
-* [Mickaël Andrieu](https://github.com/mickaelandrieu)
-* and other
-  [awesome developers](https://github.com/gnugat/GnugatWizardBundle/graphs/contributors)
+* [François Gueguenn](https://github.com/fgueguen)
+* [Jérémy Romey](https://github.com/jeremyFreeAgent)
+* [Reinis Grinbergs](https://github.com/rpg600)
+* [Clément Bertillon](https://github.com/skigun)
+
+Here's the [commit contributors](https://github.com/gnugat/GnugatWizardBundle/graphs/contributors).
