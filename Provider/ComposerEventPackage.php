@@ -40,8 +40,6 @@ class ComposerEventPackage implements ComposerPackageProvider
      */
     public function getPackage($name)
     {
-        $packages = array();
-
         $autoload = $this->composerEventPackage->getAutoload();
 
         $autoloadNamespaces = array();
