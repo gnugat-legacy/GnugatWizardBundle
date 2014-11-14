@@ -40,8 +40,6 @@ class ComposerEventPackage implements ComposerPackageProvider
      */
     public function getPackage($name)
     {
-        $packages = array();
-
         $autoload = $this->composerEventPackage->getAutoload();
 
         $autoloadNamespaces = array();
@@ -53,7 +51,7 @@ class ComposerEventPackage implements ComposerPackageProvider
         }
 
         foreach ($autoloadNamespaces as $namespace => $paths) {
-            if (false !== strpos($paths[0], $name)) {
+            if ($paths && false !== strpos($paths[0], $name)) {
                 $package = new ComposerPackage();
                 $package->namespace = trim($namespace, '\\');
                 $package->name = $name;
