@@ -3,7 +3,7 @@
 Removes [muggle](http://en.wikipedia.org/wiki/Muggle) steps from bundle
 installation by shrinking it to a single command:
 
-    composer require 'acme/demo-bunlde:*'
+    composer require 'acme/demo-bundle:*'
 
 No more manual edition of `app/AppKernel.php`, everything is done automagically!
 
